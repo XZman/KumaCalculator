@@ -57,8 +57,6 @@ public class LexicalAnalyzer {
 		patterns.put(Token.NUMBER, Pattern.compile(Token.NUMBER));
 		patterns.put(Token.VARIABLE, Pattern.compile(Token.VARIABLE));
 
-		patterns.put("SPACE", Pattern.compile(" +"));
-
 		return patterns;
 	}
 }
