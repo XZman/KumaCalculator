@@ -6,7 +6,7 @@ package main;
 public final class Token {
 
 	// symbol names in regex notation
-	public static final String EQUAL = " *= *";
+	public static final String EQUAL = "=";
 
 	public static final String PLUS = "\\+";
 	public static final String SUBTRACT = "-";
@@ -28,8 +28,37 @@ public final class Token {
 		this.content = content;
 	}
 
+	public String getName() {
+		String tokenName = null;
+
+		if (name.equals(EQUAL))
+			tokenName = "EQUAL";
+		if (name.equals(PLUS))
+			tokenName = "PLUS";
+		if (name.equals(SUBTRACT))
+			tokenName = "SUBSTRACT";
+		if (name.equals(MULTIPLY))
+			tokenName = "MULTIPLY";
+		if (name.equals(DIVIDE))
+			tokenName = "DIVIDE";
+		if (name.equals(LBRACKET))
+			tokenName = "LBRACKET";
+		if (name.equals(RBRACKET))
+			tokenName = "RBRACKET";
+		if (name.equals(FACTORIAL))
+			tokenName = "FACTORIAL";
+		if (name.equals(POWER))
+			tokenName = "POWER";
+		if (name.equals(NUMBER))
+			tokenName = "NUMBER";
+		if (name.equals(VARIABLE))
+			tokenName = "VARIABLE";
+
+		return tokenName;
+	}
+
 	@Override
 	public String toString() {
-		return name + ": " + content;
+		return getName() + ":" + "\"" + content + "\"";
 	}
 }
